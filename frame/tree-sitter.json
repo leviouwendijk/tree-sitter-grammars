@@ -1,0 +1,12 @@
+{
+    "grammars": [{
+        "name": "frame",
+        "scope": "source.frame",
+        "path": ".",
+        "file-types": ["frame"]
+    }],
+    "metadata": {
+        "version": "0.1.0",
+        "authors": [{"name": "Frame Contributors"}]
+    }
+}
