@@ -6,6 +6,9 @@
 "]" @punctuation.bracket
 "{" @punctuation.bracket
 "}" @punctuation.bracket
+((entry name: (_) @keyword)
+  (#any-of? @keyword "packages" "workflows" "defaults")
+  (#set! priority 120))
 (block_comment) @comment
 (boolean) @boolean
 (entry name: (_) @property)
