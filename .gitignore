@@ -1,0 +1,50 @@
+.DS_Store
+.build/
+.index-build/
+.swiftpm/
+DerivedData/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+xcuserdata/
+.env
+.env.*
+.env/*
+compiled.pkl
+/compiled.pkl
+**/compiled.pkl
+
+# macOS
+.AppleDouble
+
+# Tree-sitter compilation artifacts
+build/
+prebuilds/
+*.o
+*.obj
+*.a
+*.so
+*.so.*
+*.dylib
+*.dll
+*.wasm
+
+# Package manager and build caches
+node_modules/
+target/
+.build/
+.swiftpm/
+.zig-cache/
+zig-cache/
+zig-out/
+
+# Python build artifacts
+__pycache__/
+.venv/
+*.egg-info/
+dist/
+
+# Temporary output
+*.log
+*.tmp
+*.bak
