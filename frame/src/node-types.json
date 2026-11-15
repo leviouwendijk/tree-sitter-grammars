@@ -41,6 +41,82 @@
     }
   },
   {
+    "type": "assignment",
+    "named": true,
+    "fields": {
+      "target": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "reference",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "value",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "binding",
+    "named": true,
+    "fields": {
+      "mutability": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "let_keyword",
+            "named": true
+          },
+          {
+            "type": "var_keyword",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "type",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "value",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "document",
     "named": true,
     "root": true,
@@ -50,14 +126,22 @@
       "required": false,
       "types": [
         {
-          "type": "entry",
+          "type": "assignment",
+          "named": true
+        },
+        {
+          "type": "binding",
+          "named": true
+        },
+        {
+          "type": "import",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "entry",
+    "type": "field",
     "named": true,
     "fields": {
       "name": {
@@ -75,10 +159,6 @@
         "required": true,
         "types": [
           {
-            "type": "object",
-            "named": true
-          },
-          {
             "type": "value",
             "named": true
           }
@@ -87,22 +167,98 @@
     }
   },
   {
-    "type": "object",
+    "type": "fields",
     "named": true,
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
-          "type": "entry",
+          "type": "field",
+          "named": true
+        },
+        {
+          "type": "fields",
           "named": true
         }
       ]
     }
   },
   {
+    "type": "import",
+    "named": true,
+    "fields": {
+      "module": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "import_keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "literal",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "fields",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "member",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "reference",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "type",
     "named": true,
     "fields": {},
     "children": {
@@ -133,15 +289,19 @@
           "named": true
         },
         {
+          "type": "literal",
+          "named": true
+        },
+        {
+          "type": "member",
+          "named": true
+        },
+        {
           "type": "null",
           "named": true
         },
         {
           "type": "number",
-          "named": true
-        },
-        {
-          "type": "object",
           "named": true
         },
         {
@@ -161,6 +321,10 @@
   },
   {
     "type": ".",
+    "named": false
+  },
+  {
+    "type": ":",
     "named": false
   },
   {
@@ -189,12 +353,15 @@
     "named": true
   },
   {
-    "type": "hash_comment",
-    "named": true,
-    "extra": true
+    "type": "identifier",
+    "named": true
   },
   {
-    "type": "identifier",
+    "type": "import_keyword",
+    "named": true
+  },
+  {
+    "type": "let_keyword",
     "named": true
   },
   {
@@ -212,6 +379,10 @@
   },
   {
     "type": "quoted",
+    "named": true
+  },
+  {
+    "type": "var_keyword",
     "named": true
   },
   {
