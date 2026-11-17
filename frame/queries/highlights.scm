@@ -9,6 +9,7 @@
 "}" @punctuation.bracket
 (binding name: (_) @variable)
 (block_comment) @comment
+(block_quoted) @string
 (boolean) @boolean
 (field name: (_) @property)
 (import module: (_) @namespace)

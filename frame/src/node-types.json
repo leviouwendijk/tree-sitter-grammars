@@ -285,6 +285,10 @@
           "named": true
         },
         {
+          "type": "block_quoted",
+          "named": true
+        },
+        {
           "type": "boolean",
           "named": true
         },
@@ -347,6 +351,10 @@
     "type": "block_comment",
     "named": true,
     "extra": true
+  },
+  {
+    "type": "block_quoted",
+    "named": true
   },
   {
     "type": "boolean",
