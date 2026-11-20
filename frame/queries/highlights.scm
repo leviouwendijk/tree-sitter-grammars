@@ -1,3 +1,5 @@
+"(" @punctuation.bracket
+")" @punctuation.bracket
 "," @punctuation.delimiter
 "." @operator
 ":" @punctuation.delimiter
@@ -11,6 +13,7 @@
 (block_comment) @comment
 (block_quoted) @string
 (boolean) @boolean
+(call name: (_) @function)
 (field name: (_) @property)
 (import module: (_) @namespace)
 (import_keyword) @keyword
